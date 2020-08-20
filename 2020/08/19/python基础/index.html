@@ -171,7 +171,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3.5k 字
+      4.4k 字
     </span>
   
 
@@ -181,7 +181,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      46
+      59
        分钟
     </span>
   
@@ -248,7 +248,7 @@ print(z)</code></pre>
 <li>从视觉上会好看一些，调试代码比较舒服</li>
 <li>写代码，需要遵循 PEP8 规范  <ul>
 <li>变量的等号两边必须是有空格的，各大公司code review</li>
-<li><strong>变量名必须要有意义</strong> shell</li>
+<li><strong>变量名必须要有意义</strong> </li>
 <li>变量名只能是 字母、数字或下划线的任意组合</li>
 <li>变量名建议不使用拼音和中文</li>
 <li>变量的要具有意义</li>
@@ -275,16 +275,10 @@ print(z)</code></pre>
 </li>
 </ul>
 <p>在代码 code review (代码评审) , 我们要求三种风格你可以随便选择一种你喜欢的风格，但是大家在选择完成之后，一定要主要的是，千万别中途换风格。</p>
-<h5 id="4-1-中午分享"><a href="#4-1-中午分享" class="headerlink" title="4.1 中午分享"></a>4.1 中午分享</h5><ul>
-<li>基础都会，就是让你自己写的时候，写不出来？<blockquote>
-<p>前提要多练，应该带着项目练。练完一两个项目之后，自然就熟悉了。如果说，你们公司正在建设自动化运维平台，希望大家勇敢点，去做一些核心的模块。</p>
-</blockquote>
-</li>
-</ul>
 <h5 id="5-python的基础数据类型"><a href="#5-python的基础数据类型" class="headerlink" title="5. python的基础数据类型"></a>5. python的基础数据类型</h5><ul>
 <li><p>整型</p>
 <blockquote>
-<p>表示一个整数的</p>
+<p>表示一个整数的<br>num = 13  ### int<br>print(num, type(num))</p>
 </blockquote>
 </li>
 <li><p>字符串</p>
@@ -295,6 +289,9 @@ print(z)</code></pre>
 </blockquote>
 </li>
 <li><p>布尔</p>
+<pre><code class="hljs pgsql"><span class="hljs-type">bool</span> 值：<span class="hljs-keyword">False</span>, <span class="hljs-keyword">True</span></code></pre>
+<p>  print(3&gt;7) ## False</p>
+<p>  print(5&gt;4) ## True</p>
 </li>
 </ul>
 <h6 id="5-1-注释"><a href="#5-1-注释" class="headerlink" title="5.1 注释"></a>5.1 注释</h6><pre><code class="hljs 1c"><span class="hljs-meta">### : python 注释，unix的注释方式</span>
@@ -475,14 +472,73 @@ a = a * <span class="hljs-number">2</span></code></pre>
 </ul>
 <pre><code class="hljs python"><span class="hljs-keyword">and</span> : 与的意思 ， 要求<span class="hljs-keyword">and</span>的左右两边的表达式的值都是<span class="hljs-literal">True</span></code></pre>
 
-<h4 id="10-索引"><a href="#10-索引" class="headerlink" title="10. 索引"></a>10. 索引</h4><p>提到索引，立马想到的一个概念是：索引都是从 0 开始计数的的</p>
-<p>10.1索引的取值</p>
+<h4 id="10-逻辑表达式"><a href="#10-逻辑表达式" class="headerlink" title="10.逻辑表达式"></a>10.逻辑表达式</h4><pre><code class="hljs clean">### and or 别名： 短路运算符, 如果左边的表达式值为false的话，直接返回，不再去判断右边的结果
+
+
+
+#### and ： 左右两边的表达式必须都为<span class="hljs-literal">True</span>，最后结果才为<span class="hljs-literal">True</span>
+
+num = <span class="hljs-number">10</span>
+a = <span class="hljs-number">13</span>
+
+ret = num &lt; <span class="hljs-number">12</span> and a &gt; <span class="hljs-number">2</span>
+
+print(ret) ### <span class="hljs-literal">False</span>
+
+#### or ： 或， 左右两边的表达式只要有一个值为true， 就立即返回<span class="hljs-literal">True</span>
+
+num = <span class="hljs-number">15</span>
+a = <span class="hljs-number">13</span>
+
+ret = (num &gt; <span class="hljs-number">12</span>) or (a &gt; <span class="hljs-number">2</span>)
+
+print(ret) ### <span class="hljs-literal">False</span></code></pre>
+
+<h4 id="11-字符串的常规操作"><a href="#11-字符串的常规操作" class="headerlink" title="11.字符串的常规操作"></a>11.字符串的常规操作</h4><pre><code class="hljs clean"># s = <span class="hljs-string">&quot;pounds&quot;</span>
+
+# ret = s.startswith(<span class="hljs-string">&#x27;xxxx&#x27;</span>) ### 判断字符串是否以某个字符开头
+
+# ret = s.endswith(<span class="hljs-string">&#x27;s&#x27;</span>) ### 以某个字符串结尾
+
+# ret = len(s) ### 字符串的长度
+
+# name = input(<span class="hljs-string">&#x27;请输入名字:&#x27;</span>)
+# ret = name.strip() ### 去除字符串左右两边的空格  ****
+
+# ret = s.upper()  ### 字符串大写
+
+# ret = s.lower() ### 字符串小写
+
+# ret = s.title() ### 字符串首字母大写
+
+
+# video_file_name = <span class="hljs-string">&quot;高清无码爱情动作片.mp4&quot;</span>
+# new_file_name = video_file_name.replace(<span class="hljs-string">&quot;mp4&quot;</span>,<span class="hljs-string">&quot;avi&quot;</span>) #### 字符串的替换  ***
+# # final_file_name = new_file_name.replace(<span class="hljs-string">&quot;无码&quot;</span>,<span class="hljs-string">&quot;步兵&quot;</span>)
+# print(new_file_name)
+
+# data = <span class="hljs-string">&quot;pounds|boduo|cang&quot;</span>
+# ret = data.split(<span class="hljs-string">&#x27;|&#x27;</span>)   ###### 将字符串按照某一个特殊的分隔符进行分割，结果是数组 *******
+# print(ret)  ### [<span class="hljs-string">&#x27;pounds&#x27;</span>, <span class="hljs-string">&#x27;boduo&#x27;</span>, <span class="hljs-string">&#x27;cang&#x27;</span>]
+
+
+# ret = [<span class="hljs-string">&#x27;pounds&#x27;</span>, <span class="hljs-string">&#x27;boduo&#x27;</span>, <span class="hljs-string">&#x27;cang&#x27;</span>]
+# r = <span class="hljs-string">&quot;-&quot;</span>.join(ret)  #### 将列表转换成字符串  *******
+# print(r)
+
+# v1 = <span class="hljs-string">&quot;0x1238871&quot;</span>
+
+# ret = v1.isdecimal() #查看十进制
+
+# print(ret)</code></pre>
+<h4 id="12-索引"><a href="#12-索引" class="headerlink" title="12. 索引"></a>12. 索引</h4><p>提到索引，立马想到的一个概念是：索引都是从 0 开始计数的的</p>
+<p>12.1索引的取值</p>
 <pre><code class="hljs python">name = <span class="hljs-string">&#x27;hello&#x27;</span>
 print(name[<span class="hljs-number">0</span>])  <span class="hljs-comment">### h</span>
 <span class="hljs-comment"># print(name[6])  ### 报错</span>
 print(name[<span class="hljs-number">-1</span>])</code></pre>
 
-<p>10.2 切片 </p>
+<p>12.2 切片 </p>
 <pre><code class="hljs python"><span class="hljs-comment"># name = &#x27;h e l l o w o r l d&#x27;</span>
 <span class="hljs-comment">#         0 1 2 3 4 5 6 7 8 9</span>
 name = <span class="hljs-string">&#x27;helloworld&#x27;</span>
@@ -504,7 +560,7 @@ name = <span class="hljs-string">&#x27;helloworld&#x27;</span>
 print(name[<span class="hljs-number">2</span>:<span class="hljs-number">-1</span>])</code></pre>
 
 
-<h4 id="11-python基础数据类型之列表和元组"><a href="#11-python基础数据类型之列表和元组" class="headerlink" title="11. python基础数据类型之列表和元组"></a>11. python基础数据类型之列表和元组</h4><ul>
+<h4 id="13-python基础数据类型之列表和元组"><a href="#13-python基础数据类型之列表和元组" class="headerlink" title="13. python基础数据类型之列表和元组"></a>13. python基础数据类型之列表和元组</h4><ul>
 <li><p>列表   其他语言叫数组</p>
 <ul>
 <li><p>定义：用来存储比较复杂的数据 </p>
@@ -523,7 +579,7 @@ print(name[<span class="hljs-number">2</span>:<span class="hljs-number">-1</span
 <li><p>remove就是通过值删除这个元素</p>
 </li>
 <li><p>del 通过索引来删除值</p>
-<p>pop 是弹出，后面可以引用，remove，del好像是直接删除    </p>
+<p>pop 是弹出，后面可以引用，remove，del是直接删除    </p>
 </li>
 </ul>
 </li>
@@ -553,7 +609,7 @@ user_list = [<span class="hljs-string">&quot;范德彪&quot;</span>,<span class=
 <p><span class="hljs-comment">### 2. 列表转字符串</span><br>names_list = [<span class="hljs-string">&quot;范德彪&quot;</span>,<span class="hljs-string">&quot;刘华强&quot;</span>,<span class="hljs-string">&#x27;尼古拉斯赵四&#x27;</span>,<span class="hljs-string">&quot;宋小宝&quot;</span>,<span class="hljs-string">&quot;刘能&quot;</span>]</p>
 <p><span class="hljs-comment">### 将上述元素通过下划线拼接成字符串</span><br>res = <span class="hljs-string">&#x27;_&#x27;</span>.join(names_list)<br>print(res, type(res))</code></pre>:hexoPostRenderEscape–&gt;</p>
 <p><strong>列表的增删改查，下去复习列表的基本操作的时候，遵循这个增删改查的原则</strong></p>
-<h4 id="12-python的基础数据类型之字典和集合"><a href="#12-python的基础数据类型之字典和集合" class="headerlink" title="12. python的基础数据类型之字典和集合"></a>12. python的基础数据类型之字典和集合</h4><p><strong>字典和列表一样的重要</strong></p>
+<h4 id="14-python的基础数据类型之字典和集合"><a href="#14-python的基础数据类型之字典和集合" class="headerlink" title="14. python的基础数据类型之字典和集合"></a>14. python的基础数据类型之字典和集合</h4><p><strong>字典和列表一样的重要</strong></p>
 <p>python里叫字典，而其他语言java： 哈希table   hashtable</p>
 <p>定义方式：</p>
 <p>最长用的两种</p>
@@ -641,13 +697,12 @@ s1 = set(v1)
 l1 = list(s1)
 print(l1)</code></pre>
 
-<h4 id="13-python对文件的操作"><a href="#13-python对文件的操作" class="headerlink" title="13. python对文件的操作"></a>13. python对文件的操作</h4><blockquote>
+<h4 id="15-python对文件的操作"><a href="#15-python对文件的操作" class="headerlink" title="15. python对文件的操作"></a>15. python对文件的操作</h4><blockquote>
 <p>主要学习就是文件打开的几种模式，，项目中涉及到就是文件上传和下载</p>
 </blockquote>
 <p>主要的文件打开方式：</p>
 <p>模式： w, r, r+<br>方法： open, close, read, write<br>上下文管理器：推崇的方式</p>
-<p>#####4. python的函数 基础入门</p>
-<blockquote>
+<h4 id="16-python的函数-基础入门"><a href="#16-python的函数-基础入门" class="headerlink" title="16. python的函数 基础入门"></a>16. python的函数 基础入门</h4><blockquote>
 <p>重点：函数的参数</p>
 </blockquote>
 <p>函数的定义：</p>
@@ -661,14 +716,97 @@ python:
         函数体
     test() <span class="hljs-comment">### 函数调用</span></code></pre>
 
+<pre><figcaption><span>cal():</span></figcaption><code class="hljs def"></code></pre>
+
+<p>return的使用</p>
+<p>  # num = 10</p>
+<p>  # num = num + 1</p>
+<p>  # return ‘hello’, ‘kkkk’ ### return来返回结果， 不管下面还有多少代码，都不会执行</p>
+<p>  return num</p>
+<p>a,b = cal() ### hellowrld</p>
+<p>print(a,b)</p>
+<p>如果函数返回多个值，那接收返回值类型是一个元组(‘hello’, ‘kkkk’)</p>
+<p>那什么情况下才会用return呢?</p>
+<p>需要获取函数的执行结果的时候，我们就可以使用return</p>
+<p>‘’’</p>
+<p>参数的分类</p>
 <ul>
-<li>参数的分类<ul>
-<li>位置参数</li>
-<li>关键字参数</li>
-<li>动态接收参数</li>
-</ul>
+<li><p>位置参数：</p>
+<p>  一一对应，传入实参</p>
 </li>
 </ul>
+<p>  def yue(chat, addr, age):  # chat 形参</p>
+<pre><code>print(&quot;拿出手机&quot;)
+
+print(&quot;打开&quot;+chat)
+
+print(&quot;找个&quot; + addr +&quot;附近漂亮的&quot; + str(age) + &quot;岁妹子&quot;)
+
+print(&quot;约不约&quot;)</code></pre>
+<p>  yue(“北京”,”陌陌”, age=18)  # 实参</p>
+  <pre><code class="hljs plain"></code></pre>
+
+<ul>
+<li><p>关键字参数</p>
+<p>‘’’</p>
+<p>关键字参数：</p>
+<p>  通过指定关键字传入参数</p>
+<p>  关键参数后面不能有位置参数， 而位置参数后面可有关键字参数</p>
+<p>‘’’</p>
+</li>
+</ul>
+<p>  def yue(chat, addr, age):  # chat 形参</p>
+<pre><code>print(&quot;拿出手机&quot;)
+
+print(&quot;打开&quot;+chat)
+
+print(&quot;找个&quot; + addr +&quot;附近漂亮的&quot; + str(age) + &quot;岁妹子&quot;)
+
+print(&quot;约不约&quot;)</code></pre>
+<p>  yue(addr=”北京”,chat=”陌陌”, age=18)  # 实参</p>
+<ul>
+<li>默认参数</li>
+</ul>
+<p>默认值:函数声明的时候，必须写到后面</p>
+<p>def stu_info(name, age, sex=’男’):<br>    print(“录入学生信息”)<br>    print(name, age, sex)<br>    print(“录入完毕”)</p>
+<p>stu_info(“张强”, 18, ‘妖’) #默认参数可以修改</p>
+<ul>
+<li><p>动态接收位置参数</p>
+<p>‘’’<br>args：会将所有的元素以元组的方式接收</p>
+<p>‘’’</p>
+</li>
+</ul>
+<p>  def eat(*args):<br>      print(‘我想吃’,args)</p>
+<p>  eat(‘大米饭’,’中米饭’,’小米饭’)</p>
+<p>  def eat(a,b,c=’白菜’,*args):<br>      print(‘我想吃’,a,b,c,args)</p>
+<p>  eat(‘豆腐’,’粉条’,’猪肉’,’大葱’)</p>
+<p>  def eat(a,b, *args, c=’白菜’):<br>      print(‘我想吃’,a,b,c,args)</p>
+<p>  eat(‘豆腐’,’粉条’,’猪肉’,’大葱’)</p>
+<ul>
+<li><p>动态接收关键字参数</p>
+<p>‘’’</p>
+<p>动态获取关键字参数</p>
+<p>会将获取的值打散成一个字典</p>
+<p>‘’’</p>
+</li>
+</ul>
+<p>  def func(**kwargs):</p>
+<pre><code>print(kwargs)  ### &#123;&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3&#125; 字典格式
+
+print(kwargs.get(&#39;a&#39;))</code></pre>
+<p>  func(a=1, b=2, c=3)</p>
+<ul>
+<li><p>动态接收所有参数</p>
+<p>def func(*args,**kwargs):</p>
+<p>  print(args,kwargs)</p>
+</li>
+</ul>
+<p>  func(1,23,5,a=1,b=6)</p>
+<p>###django 经常用到</p>
+<p>  dic = {‘name’:1,’age’:2}</p>
+<p>  def func(**kwargs):</p>
+<pre><code>print(kwargs)</code></pre>
+<p>  func(**{‘a’:1,’b’:2})</p>
 <p>参数组合：</p>
 <pre><code class="hljs python">第一种：
 位置参数， 关键字参数， 默认参数
@@ -682,6 +820,15 @@ dic = &#123;<span class="hljs-string">&#x27;a&#x27;</span>:<span class="hljs-num
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func</span>(<span class="hljs-params">**kwargs</span>):</span>
     print(kwargs)
 func(**dic)</code></pre>
+
+<p>函数的注释：<br>def test(a):<br>    ‘’’<br>    测试功能<br>    :param: a<br>    :return: None<br>    ‘’’</p>
+<pre><code>print(&#39;hello&#39;)</code></pre>
+<p>函数的全局变量和局部变量：<br>num = “123” ## 全局变量</p>
+<p>def test():<br>    num = 456  ## 局部变量，只是在函数体内生效<br>    print(num) #456</p>
+<p>test()<br>print(num) #123</p>
+<p>num = “123” ## 全局变量</p>
+<p>def test():<br>    global num  ### gloab 声明局部变量为全局变量，会导致变量污染，global禁用<br>    num = 456<br>    print(num)</p>
+<p>test()<br>print(num)</p>
 
             </div>
             <hr>
