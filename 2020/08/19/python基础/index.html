@@ -171,7 +171,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4.4k 字
+      4.5k 字
     </span>
   
 
@@ -181,7 +181,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      59
+      61
        分钟
     </span>
   
@@ -706,26 +706,34 @@ print(l1)</code></pre>
 <p>重点：函数的参数</p>
 </blockquote>
 <p>函数的定义：</p>
-<pre><code class="hljs python">shell:
+<pre><code class="hljs clean">shell:
     func test()&#123;
         函数体
     &#125;
-    test() <span class="hljs-comment">### 函数的调用</span>
+    test() ### 函数的调用
 python:
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test</span>():</span>
+    def test():
         函数体
-    test() <span class="hljs-comment">### 函数调用</span></code></pre>
+    test() ### 函数调用
+</code></pre>
 
-<pre><figcaption><span>cal():</span></figcaption><code class="hljs def"></code></pre>
 
 <p>return的使用</p>
-<p>  # num = 10</p>
-<p>  # num = num + 1</p>
-<p>  # return ‘hello’, ‘kkkk’ ### return来返回结果， 不管下面还有多少代码，都不会执行</p>
-<p>  return num</p>
-<p>a,b = cal() ### hellowrld</p>
-<p>print(a,b)</p>
-<p>如果函数返回多个值，那接收返回值类型是一个元组(‘hello’, ‘kkkk’)</p>
+<pre><code class="hljs livecodeserver"><span class="hljs-built_in">num</span> = <span class="hljs-number">10</span>
+
+<span class="hljs-built_in">num</span> = <span class="hljs-built_in">num</span> + <span class="hljs-number">1</span>
+
+<span class="hljs-literal">return</span> <span class="hljs-string">&#x27;hello&#x27;</span>, <span class="hljs-string">&#x27;kkkk&#x27;</span> <span class="hljs-comment">### return来返回结果， 不管下面还有多少代码，都不会执行</span>
+
+<span class="hljs-literal">return</span> <span class="hljs-built_in">num</span>
+
+
+
+<span class="hljs-keyword">a</span>,b = cal() <span class="hljs-comment">### hellowrld</span>
+
+print(<span class="hljs-keyword">a</span>,b)
+</code></pre>
+<p>‘’’<br>如果函数返回多个值，那接收返回值类型是一个元组(‘hello’, ‘kkkk’)</p>
 <p>那什么情况下才会用return呢?</p>
 <p>需要获取函数的执行结果的时候，我们就可以使用return</p>
 <p>‘’’</p>
@@ -735,16 +743,17 @@ python:
 <p>  一一对应，传入实参</p>
 </li>
 </ul>
-<p>  def yue(chat, addr, age):  # chat 形参</p>
-<pre><code>print(&quot;拿出手机&quot;)
+<pre><code class="hljs routeros">def yue(chat, addr, age):  # chat 形参
 
-print(&quot;打开&quot;+chat)
+    <span class="hljs-builtin-name">print</span>(<span class="hljs-string">&quot;拿出手机&quot;</span>)
 
-print(&quot;找个&quot; + addr +&quot;附近漂亮的&quot; + str(age) + &quot;岁妹子&quot;)
+    <span class="hljs-builtin-name">print</span>(<span class="hljs-string">&quot;打开&quot;</span>+chat)
 
-print(&quot;约不约&quot;)</code></pre>
-<p>  yue(“北京”,”陌陌”, age=18)  # 实参</p>
-  <pre><code class="hljs plain"></code></pre>
+    <span class="hljs-builtin-name">print</span>(<span class="hljs-string">&quot;找个&quot;</span> + addr +<span class="hljs-string">&quot;附近漂亮的&quot;</span> + str(age) + <span class="hljs-string">&quot;岁妹子&quot;</span>)
+
+    <span class="hljs-builtin-name">print</span>(<span class="hljs-string">&quot;约不约&quot;</span>)
+yue(<span class="hljs-string">&quot;北京&quot;</span>,<span class="hljs-string">&quot;陌陌&quot;</span>, <span class="hljs-attribute">age</span>=18)  # 实参
+</code></pre>
 
 <ul>
 <li><p>关键字参数</p>
@@ -755,33 +764,49 @@ print(&quot;约不约&quot;)</code></pre>
 <p>‘’’</p>
 </li>
 </ul>
-<p>  def yue(chat, addr, age):  # chat 形参</p>
-<pre><code>print(&quot;拿出手机&quot;)
+<pre><code class="hljs routeros">def yue(chat, addr, age):  # chat 形参
 
-print(&quot;打开&quot;+chat)
+    <span class="hljs-builtin-name">print</span>(<span class="hljs-string">&quot;拿出手机&quot;</span>)
 
-print(&quot;找个&quot; + addr +&quot;附近漂亮的&quot; + str(age) + &quot;岁妹子&quot;)
+    <span class="hljs-builtin-name">print</span>(<span class="hljs-string">&quot;打开&quot;</span>+chat)
 
-print(&quot;约不约&quot;)</code></pre>
-<p>  yue(addr=”北京”,chat=”陌陌”, age=18)  # 实参</p>
+    <span class="hljs-builtin-name">print</span>(<span class="hljs-string">&quot;找个&quot;</span> + addr +<span class="hljs-string">&quot;附近漂亮的&quot;</span> + str(age) + <span class="hljs-string">&quot;岁妹子&quot;</span>)
+
+    <span class="hljs-builtin-name">print</span>(<span class="hljs-string">&quot;约不约&quot;</span>)
+
+yue(<span class="hljs-attribute">addr</span>=<span class="hljs-string">&quot;北京&quot;</span>,chat=&quot;陌陌&quot;, <span class="hljs-attribute">age</span>=18)  # 实参</code></pre>
+
 <ul>
 <li>默认参数</li>
 </ul>
 <p>默认值:函数声明的时候，必须写到后面</p>
-<p>def stu_info(name, age, sex=’男’):<br>    print(“录入学生信息”)<br>    print(name, age, sex)<br>    print(“录入完毕”)</p>
-<p>stu_info(“张强”, 18, ‘妖’) #默认参数可以修改</p>
+<pre><code class="hljs routeros">def stu_info(name, age, <span class="hljs-attribute">sex</span>=<span class="hljs-string">&#x27;男&#x27;</span>):
+    <span class="hljs-builtin-name">print</span>(<span class="hljs-string">&quot;录入学生信息&quot;</span>)
+    <span class="hljs-builtin-name">print</span>(name, age, sex)
+    <span class="hljs-builtin-name">print</span>(<span class="hljs-string">&quot;录入完毕&quot;</span>)
+
+stu_info(<span class="hljs-string">&quot;张强&quot;</span>, 18, <span class="hljs-string">&#x27;妖&#x27;</span>) #默认参数可以修改</code></pre>
+
+
 <ul>
-<li><p>动态接收位置参数</p>
+<li>动态接收位置参数</li>
+</ul>
 <p>‘’’<br>args：会将所有的元素以元组的方式接收</p>
 <p>‘’’</p>
-</li>
-</ul>
-<p>  def eat(*args):<br>      print(‘我想吃’,args)</p>
-<p>  eat(‘大米饭’,’中米饭’,’小米饭’)</p>
-<p>  def eat(a,b,c=’白菜’,*args):<br>      print(‘我想吃’,a,b,c,args)</p>
-<p>  eat(‘豆腐’,’粉条’,’猪肉’,’大葱’)</p>
-<p>  def eat(a,b, *args, c=’白菜’):<br>      print(‘我想吃’,a,b,c,args)</p>
-<p>  eat(‘豆腐’,’粉条’,’猪肉’,’大葱’)</p>
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">eat</span>(<span class="hljs-params">*args</span>):</span>
+    print(<span class="hljs-string">&#x27;我想吃&#x27;</span>,args)
+
+eat(<span class="hljs-string">&#x27;大米饭&#x27;</span>,<span class="hljs-string">&#x27;中米饭&#x27;</span>,<span class="hljs-string">&#x27;小米饭&#x27;</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">eat</span>(<span class="hljs-params">a,b,c=<span class="hljs-string">&#x27;白菜&#x27;</span>,*args</span>):</span>
+    print(<span class="hljs-string">&#x27;我想吃&#x27;</span>,a,b,c,args)
+
+eat(<span class="hljs-string">&#x27;豆腐&#x27;</span>,<span class="hljs-string">&#x27;粉条&#x27;</span>,<span class="hljs-string">&#x27;猪肉&#x27;</span>,<span class="hljs-string">&#x27;大葱&#x27;</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">eat</span>(<span class="hljs-params">a,b, *args, c=<span class="hljs-string">&#x27;白菜&#x27;</span></span>):</span>
+    print(<span class="hljs-string">&#x27;我想吃&#x27;</span>,a,b,c,args)
+
+eat(<span class="hljs-string">&#x27;豆腐&#x27;</span>,<span class="hljs-string">&#x27;粉条&#x27;</span>,<span class="hljs-string">&#x27;猪肉&#x27;</span>,<span class="hljs-string">&#x27;大葱&#x27;</span>)</code></pre>
 <ul>
 <li><p>动态接收关键字参数</p>
 <p>‘’’</p>
@@ -790,46 +815,63 @@ print(&quot;约不约&quot;)</code></pre>
 <p>‘’’</p>
 </li>
 </ul>
-<p>  def func(**kwargs):</p>
-<pre><code>print(kwargs)  ### &#123;&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3&#125; 字典格式
+<pre><code class="hljs routeros">def func(**kwargs):
 
-print(kwargs.get(&#39;a&#39;))</code></pre>
-<p>  func(a=1, b=2, c=3)</p>
+     <span class="hljs-builtin-name">print</span>(kwargs)  ### &#123;<span class="hljs-string">&#x27;a&#x27;</span>: 1, <span class="hljs-string">&#x27;b&#x27;</span>: 2, <span class="hljs-string">&#x27;c&#x27;</span>: 3&#125; 字典格式
+
+    <span class="hljs-builtin-name">print</span>(kwargs.<span class="hljs-builtin-name">get</span>(<span class="hljs-string">&#x27;a&#x27;</span>))
+
+func(<span class="hljs-attribute">a</span>=1, <span class="hljs-attribute">b</span>=2, <span class="hljs-attribute">c</span>=3)</code></pre>
 <ul>
-<li><p>动态接收所有参数</p>
-<p>def func(*args,**kwargs):</p>
-<p>  print(args,kwargs)</p>
+<li><p>动态接收所有参数<br>&lt;!–hexoPostRenderEscape:<pre><code class="hljs go">def <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(*args,**kwargs)</span>:</span></p>
+<p>  <span class="hljs-built_in">print</span>(args,kwargs)</p>
 </li>
 </ul>
-<p>  func(1,23,5,a=1,b=6)</p>
-<p>###django 经常用到</p>
-<p>  dic = {‘name’:1,’age’:2}</p>
-<p>  def func(**kwargs):</p>
-<pre><code>print(kwargs)</code></pre>
-<p>  func(**{‘a’:1,’b’:2})</p>
-<p>参数组合：</p>
-<pre><code class="hljs python">第一种：
-位置参数， 关键字参数， 默认参数
-test(a, b, c=<span class="hljs-number">1</span>)
+<p><span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(1,23,5,a=1,b=6)</span></span></code></pre>:hexoPostRenderEscape–&gt;</p>
+<p><strong>django 经常用到</strong></p>
+<pre><code class="hljs autoit">dic = &#123;<span class="hljs-string">&#x27;name&#x27;</span>:<span class="hljs-number">1</span>,<span class="hljs-string">&#x27;age&#x27;</span>:<span class="hljs-number">2</span>&#125;
 
-第二种：
-动态接收位置参数， 动态接收关键字参数配合起来使用
-test(*args, **kwargs)
+def <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(**kwargs)</span>:</span>
 
-dic = &#123;<span class="hljs-string">&#x27;a&#x27;</span>:<span class="hljs-number">1</span>,<span class="hljs-string">&#x27;b&#x27;</span>:<span class="hljs-number">2</span>&#125;
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func</span>(<span class="hljs-params">**kwargs</span>):</span>
     print(kwargs)
-func(**dic)</code></pre>
 
-<p>函数的注释：<br>def test(a):<br>    ‘’’<br>    测试功能<br>    :param: a<br>    :return: None<br>    ‘’’</p>
-<pre><code>print(&#39;hello&#39;)</code></pre>
-<p>函数的全局变量和局部变量：<br>num = “123” ## 全局变量</p>
-<p>def test():<br>    num = 456  ## 局部变量，只是在函数体内生效<br>    print(num) #456</p>
-<p>test()<br>print(num) #123</p>
-<p>num = “123” ## 全局变量</p>
-<p>def test():<br>    global num  ### gloab 声明局部变量为全局变量，会导致变量污染，global禁用<br>    num = 456<br>    print(num)</p>
-<p>test()<br>print(num)</p>
+<span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(**&#123;<span class="hljs-string">&#x27;a&#x27;</span>:<span class="hljs-number">1</span>,<span class="hljs-string">&#x27;b&#x27;</span>:<span class="hljs-number">2</span>&#125;)</span></span></code></pre>
 
+<p>参数组合：</p>
+<ul>
+<li><p>第一种：<br>位置参数， 关键字参数， 默认参数</p>
+<pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">test</span><span class="hljs-params">(a, b, c=<span class="hljs-number">1</span>)</span></span></code></pre>
+</li>
+<li><p>第二种：<br>动态接收位置参数， 动态接收关键字参数配合起来使用<br>&lt;!–hexoPostRenderEscape:<pre><code class="hljs go">test(*args, **kwargs)</p>
+</li>
+</ul>
+<p>dic = &#123;<span class="hljs-string">&#x27;a&#x27;</span>:<span class="hljs-number">1</span>,<span class="hljs-string">&#x27;b&#x27;</span>:<span class="hljs-number">2</span>&#125;<br>def <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(**kwargs)</span>:</span><br>    <span class="hljs-built_in">print</span>(kwargs)<br><span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(**dic)</span></span></code></pre>:hexoPostRenderEscape–&gt;</p>
+<p>函数的注释：</p>
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test</span>(<span class="hljs-params">a</span>):</span>
+    <span class="hljs-string">&#x27;&#x27;&#x27;</span>
+<span class="hljs-string">    测试功能</span>
+<span class="hljs-string">    :param: a</span>
+<span class="hljs-string">    :return: None</span>
+<span class="hljs-string">    &#x27;&#x27;&#x27;</span>
+
+    print(<span class="hljs-string">&#x27;hello&#x27;</span>)</code></pre>
+<p>函数的全局变量和局部变量：</p>
+<pre><code class="hljs livecodeserver"><span class="hljs-built_in">num</span> = <span class="hljs-string">&quot;123&quot;</span> <span class="hljs-comment">## 全局变量</span>
+
+def test():
+    <span class="hljs-built_in">num</span> = <span class="hljs-number">456</span>  <span class="hljs-comment">## 局部变量，只是在函数体内生效</span>
+    print(<span class="hljs-built_in">num</span>) <span class="hljs-comment">#456</span>
+
+test()
+print(<span class="hljs-built_in">num</span>) <span class="hljs-comment">#123</span>
+<span class="hljs-built_in">num</span> = <span class="hljs-string">&quot;123&quot;</span> <span class="hljs-comment">## 全局变量</span></code></pre>
+<pre><code class="hljs dart">def test():
+    global <span class="hljs-built_in">num</span>  ### gloab 声明局部变量为全局变量，会导致变量污染，global禁用
+    <span class="hljs-built_in">num</span> = <span class="hljs-number">456</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">num</span>)
+
+test()
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">num</span>)</code></pre>
             </div>
             <hr>
             <div>
